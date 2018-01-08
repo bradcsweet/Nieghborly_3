@@ -1,0 +1,625 @@
+﻿body {
+    /*padding-top: 50px;
+    padding-bottom: 20px;*/
+    background: #F6E8EA;
+    font: 14px/24px 'Muli', sans-serif;
+}
+
+/*Color Pallet
+    light pink: #F6E8EA;
+    light blue: #48639C;
+    dark blue: #0A2463;
+    purple: #B8336A;
+*/
+
+/*Font front Google
+font-family: 'Lalezar', cursive;
+font-family: 'Carter One', cursive;
+font-family: 'Muli', sans-serif;
+*/
+
+
+
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/*---------------Navbar Styling--------------------*/
+.navbar.navbar-inverse {
+    font-family: 'Lalezar', cursive;
+    font-size: 20px;
+    min-height: 80px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-bottom-color: #0A2463;
+}
+
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 0px;
+    border: 1px solid transparent;
+}
+
+
+.brandLogo {
+    height: 60px;
+    width: auto;
+    padding-bottom: 15px;
+    margin-right: 10px;
+}
+
+.navbar-brand {
+    font-family: 'Carter One', cursive;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: white;
+}
+
+    .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+        background-color: #B8336A;
+    }
+
+.navbar-inverse .navbar-brand:hover {
+    color: #B8336A;
+    background-color: transparent;
+}
+
+div.navbar-collapse.collapse.navbar-right {
+    padding-top: 18px;
+}
+
+div.navbar-header {
+    min-height: 80px;
+    border-bottom-color: #0A2463;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #B8336A;
+}
+
+.bg-primary {
+    background-color: #0A2463;
+    color: #B8336A;
+}
+
+button.navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 20px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+/*Sets the breakpoint of the navbar collapse. Change the first line "@media (max-width: 1100px) */
+@media (max-width: 910px) {
+    .navbar-header {
+        float: none;
+    }
+
+    .navbar-left, .navbar-right {
+        float: none !important;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+
+    .navbar-nav {
+        float: none !important;
+        margin-top: 7.5px;
+    }
+
+        .navbar-nav > li {
+            float: none;
+        }
+
+            .navbar-nav > li > a {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+    .collapse.in {
+        display: block !important;
+    }
+}
+
+
+/*-----------------Carousel Styling----------------*/
+
+.container-fluid.carouselFormat {
+    margin: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.carousel .item img {
+    max-height: 450px;
+    min-width: 100%;
+    overflow: hidden;
+}
+
+.carousel-caption h1 span {
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-align: center;
+    font-family: "Carter One", cursive;
+    text-shadow: rgb(0, 0, 0) 1px 1px;
+}
+
+.carousel-indicators {
+    top: 50px;
+}
+
+    .carousel-indicators li {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin: 1px;
+        text-indent: -999px;
+        cursor: pointer;
+        background-color: #000 \9;
+        background-color: rgba(0, 0, 0, 0);
+        border: 1px solid #B8336A;
+        border-radius: 10px;
+    }
+
+    .carousel-indicators .active {
+        width: 17px;
+        height: 17px;
+        margin: 0;
+        background-color: #0A2463;
+    }
+
+.item.next .carousel-caption {
+    opacity: 0;
+}
+
+.carousel-caption {
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+}
+
+/*-----Carousel shrinking images with screen size-------*/
+@media (min-width: 200px) {
+    div.test > img {
+        height: 300px !important;
+    }
+}
+
+@media (min-width: 300px) {
+    div.test > img {
+        height: 300px !important;
+    }
+}
+
+@media (min-width: 400px) {
+    div.test > img {
+        height: 300px !important;
+    }
+}
+
+@media (min-width: 600px) {
+    div.test > img {
+        height: 400px !important;
+    }
+}
+
+@media, (min-width: 800px) {
+    div.test > img {
+        height: 600px !important;
+    }
+}
+
+/*-----------------Button Styling----------------*/
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #0A2463;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid white;
+}
+
+    #myBtn:hover {
+        color: #B8336A;
+        border: 1px solid #B8336A;
+    }
+
+.glyphicon.glyphicon-menu-up {
+    font-size: 50px;
+}
+
+/*--------------------Landing page Style---------------*/
+
+.container.landingFormat {
+    padding-top: 70px;
+    text-align: center;
+}
+
+    .container.landingFormat img {
+        vertical-align: middle;
+        height: auto;
+        width: 100%;
+        max-width: 934px;
+    }
+
+.landingFormat h2 {
+    font-size: 72px;
+    font-weight: 800;
+    font-family: "Lalezar", cursive;
+    margin-bottom: 60px;
+    color: black;
+}
+
+.landingFormat h3 {
+    font-size: 45px;
+    font-weight: 800;
+    font-family: "Lalezar", cursive;
+    color: black;
+}
+
+.landingFormat h4 {
+    font-size: 27px;
+    color: black;
+}
+
+landingFormat div {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.landingFormat a.btn {
+    margin-top: 33px;
+    width: 278px;
+}
+
+.btn.help {
+    background: #976391;
+    padding-left: 10px;
+}
+
+.landingFormat a.btn {
+    width: 175px;
+    border: 1px solid #000000;
+    background: #ffffff;
+    display: inline-block;
+    font: 24px/46px 'Lalezar', cursive;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+    margin-top: 20px;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-transition: 0.3s all ease;
+    transition: 0.3s all ease;
+}
+
+.landingFormat a.btn.ask {
+    background: #48639C;
+    padding-right: 20px;
+    width: 200px;
+}
+
+.landingFormat a.btn.help {
+    background: #976391;
+    padding-left: 10px;
+    width: 200px;
+}
+
+
+/*FOOTER STYLE*/
+html,
+body {
+    height: 100%;
+    /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+    min-height: 100%;
+    height: auto;
+    /* Negative indent footer by its height */
+    margin: 0 auto -60px;
+    /* Pad bottom by footer height */
+    padding: 0 0 60px;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+    height: 80px;
+    padding: 15px;
+    text-align: center;
+    background-color: #f5f5f5;
+    text-align: center;
+    background-color: #0A2463;
+    color: white;
+}
+
+
+
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* FAQ Styling */
+.FAQTitle {
+    font-family: 'Carter One', cursive;
+    font-size: 60px;
+    text-align: center;
+    margin: 50px;
+}
+
+.question {
+    font-family: 'Lalezar', cursive;
+    font-size: 27px;
+    text-align: center;
+}
+
+.answer {
+    font-size: 20px;
+    text-align: center;
+}
+
+.fixButton {
+    margin-right: 210px;
+}
+
+
+
+
+/*---------------Task2 index page Styling------------------*/
+.backgroundColor {
+    background-color: white;
+}
+/* Details Styling */
+.detailsLeft {
+    padding-left: 40px;
+}
+
+.buttonsLeft {
+    padding-left: 60px;
+    padding-top: 20px;
+}
+
+.taskIndex {
+    text-align: center;
+    font-family: 'Lalezar', cursive;
+    font-size: 42px;
+    color: white;
+    border: 3px black solid;
+    border-radius: 25px;
+    margin-bottom: 50px;
+    background-image: url('Images/autumn-mott-15013.jpg');
+}
+
+
+    .taskIndex > h2 {
+        font-size: 42px;
+    }
+
+.searchFormat {
+    float: right;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.lalazar {
+    font-family: 'Lalezar', cursive;
+}
+
+div.card {
+    text-align: center;
+    font-family: 'Muli', sans-serif;
+    font-size: 18px;
+    margin: 0px;
+    height: 400px;
+}
+
+.front.taskCard {
+    vertical-align: middle;
+    background: linear-gradient(to bottom right, #b5c0d7, #7e91b9);
+    /*background-color: #b5c0d7;*/
+}
+
+.back.taskCard {
+    height: 400px;
+    background-color: #F6E8EA;
+}
+
+    .back.taskCard > p {
+        overflow: hidden;
+    }
+
+
+.taskCard {
+    text-align: center;
+    padding: 25px;
+    min-height: 400px;
+    margin: 15px;
+    border: 5px #0A2463 solid;
+}
+
+    .taskCard.thumbnail.back {
+        height: 400px;
+        margin: 0px;
+    }
+
+    .taskCard.thumbnail.front {
+        height: 400px;
+        margin: 0px;
+    }
+
+div.col-sm-6.col-md-4 {
+    margin-bottom: 15px;
+}
+
+.taskCard h2 {
+    font-family: 'Lalezar', cursive;
+    font-weight: 400;
+}
+
+.wrapper {
+    position: relative;
+    padding-bottom: 50px;
+}
+
+    .wrapper .bottom {
+        justify-content: center;
+        position: absolute;
+        bottom: 0px;
+        height: 50px;
+    }
+
+.btn.btn-default.ask {
+    border: 1px solid #000000;
+    font: 18px 'Lalezar', cursive;
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+    background: #48639C;
+    padding-right: 10px;
+    /*width: 100px;*/
+}
+
+.btn.btn-default.help {
+    border: 1px solid #000000;
+    color: black;
+    font: 18px 'Lalezar', cursive;
+    text-align: center;
+    color: black;
+    text-transform: uppercase;
+    background: #B8336A;
+    padding-left: 10px;
+    /*width: 100px;*/
+}
+
+
+/* Create Task View */
+.createThumbnail {
+    justify-content: center;
+    text-align: center;
+    padding-top: 0px;
+    max-width: 525px;
+    margin: auto;
+    margin-top: 50px;
+    border: 5px #0A2463 solid;
+    border-radius: 25px;
+    background: linear-gradient(to bottom right, #b5c0d7, #7e91b9);
+}
+
+
+.centerText {
+    justify-content: center;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 42px;
+}
+
+.textBox {
+    height: 200px;
+}
+
+/* About Us */
+.AboutUsTitle {
+    font-family: 'Carter One', cursive;
+    font-size: 50px;
+}
+
+.manageView {
+    font-family: 'Carter One', cursive;
+}
+
+.aboutPhoto {
+    height: 350px;
+    width: 575px;
+    margin-left: 0px;
+    padding-right: 70px;
+}
+
+.aboutUsPgraph {
+    padding-right: 0px;
+    margin-right: 0px;
+    font-size: 20px;
+}
+
+/*--------Login and Register view Styling-----------*/
+
+.centerBox {
+    justify-content: center;
+    text-align: center;
+    max-width: 555px;
+    margin: auto;
+    margin-top: 50px;
+    border: 5px #0A2463 solid;
+    border-radius: 25px;
+    padding: 15px;
+}
+.centerBox>h2 {
+    font-family: 'Carter One', cursive;
+    font-size: 60px;
+}
+.form-control {
+    justify-content: center !important;
+    margin: 0px auto !important;
+    float: none;
+}
+
+.control-label {
+    text-align: center !important;
+}
+

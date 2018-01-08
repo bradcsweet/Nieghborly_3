@@ -1,0 +1,100 @@
+﻿@model Neighborly_3.Models.Task2
+
+@{
+    ViewBag.Title = "Edit";
+}
+<div class="container centerBox">
+
+    <h2>Confirm</h2>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.TaskID)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.TaskDescription, htmlAttributes: new { @class = "control-label col-md-12" })
+                <div class="col-md-12">
+                    @Html.EditorFor(model => model.TaskDescription, new { htmlAttributes = new { @class = "form-control", @style = "display:none" } })
+                    @Html.ValidationMessageFor(model => model.TaskDescription, "", new { @class = "text-danger" })
+                    @Html.DisplayFor(model => model.TaskDescription, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.TaskTitle, htmlAttributes: new { @class = "control-label col-md-12" })
+                <div class="col-md-12">
+                    @Html.EditorFor(model => model.TaskTitle, new { htmlAttributes = new { @class = "form-control", @style = "display:none" } })
+                    @Html.ValidationMessageFor(model => model.TaskTitle, "", new { @class = "text-danger" })
+                    @Html.DisplayFor(model => model.TaskTitle, new { htmlAttributes = new { @class = "form-control" } })
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.IsDone, htmlAttributes: new { @class = "control-label col-md-12" })
+                <div class="col-md-12">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.IsDone)
+                        @Html.ValidationMessageFor(model => model.IsDone, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.TimeStamp, htmlAttributes: new { @class = "control-label col-md-12" })
+                <div class="col-md-12">
+                    @Html.EditorFor(model => model.TimeStamp, new { htmlAttributes = new { @class = "form-control", @style = "display:none" } })
+                    @Html.ValidationMessageFor(model => model.TimeStamp, "", new { @class = "text-danger" })
+                    @Html.DisplayFor(model => model.TimeStamp, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.IsAssigned, htmlAttributes: new { @class = "control-label col-md-12" })
+                <div class="col-md-12">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.IsAssigned)
+                        @Html.ValidationMessageFor(model => model.IsAssigned, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.HelpProviderID, htmlAttributes: new { @class = "control-label col-md-2", @style = "display:none" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.HelpProviderID, new { htmlAttributes = new { @class = "form-control", @style = "display:none" } })
+                    @Html.ValidationMessageFor(model => model.HelpProviderID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.TaskCreatorID, htmlAttributes: new { @class = "control-label col-md-2", @style = "display:none" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.TaskCreatorID, new { htmlAttributes = new { @class = "form-control", @style = "display:none" } })
+                    @Html.ValidationMessageFor(model => model.TaskCreatorID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-12">
+                    <input type="submit" value="Confirm Your Help" class="btn btn-default help" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

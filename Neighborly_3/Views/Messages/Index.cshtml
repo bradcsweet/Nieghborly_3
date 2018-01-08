@@ -1,0 +1,123 @@
+﻿@model IEnumerable<Neighborly_3.Models.Message>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.MessageContent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeStamp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Task2.TaskDescription)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MessageContent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeStamp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Task2.TaskID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.MessageID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.MessageID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.MessageID })
+            </td>
+        </tr>
+    }
+
+    </table>
+
+@*<table class="table">
+@foreach (var item in Model)
+{
+    if (ViewBag.userID == item.Task2.TaskCreatorID)
+    {
+        
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.MessageContent)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TimeStamp)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Task2.TaskDescription)
+                </th>
+                <th></th>
+            </tr>
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MessageContent)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TimeStamp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Task2.TaskDescription)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.MessageID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.MessageID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.MessageID })
+                </td>
+            </tr>
+
+    }
+    else if (ViewBag.userID == item.Task2.HelpProviderID)
+    {
+        <table class="table">
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.MessageContent)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TimeStamp)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Task2.TaskDescription)
+                </th>
+                <th></th>
+            </tr>
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MessageContent)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TimeStamp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Task2.TaskDescription)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.MessageID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.MessageID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.MessageID })
+                </td>
+            </tr>
+
+
+        </table>
+    }
+}*@

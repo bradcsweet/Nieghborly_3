@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Carter+One|Lalezar|Muli" rel="stylesheet">
+    <script src="https://use.fontawesome.com/0b8aa8fa80.js"></script>
+    <title>@ViewBag.Title -Neighborly</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/JavaScript.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+        <div class="navbar navbar-inverse navbar-static-top bg-primary">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+                        <span>
+                            <img alt="Brand" src="@Url.Content("~/Content/Images/Logomakr_4ALkYR.png")" class="brandLogo" />Neighborly
+                        </span>
+                    </a>
+
+                </div>
+                <div class="navbar-collapse collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Request Help", "Create", "Task2")</li>
+                        <li>@Html.ActionLink("Tasks", "Index", "Task2")</li>
+                        @*<li>@Html.ActionLink("Messages", "Index", "Messages")</li>*@
+                        <li>@Html.ActionLink("FAQ", "Contact", "Home")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid body-content">
+            <button onclick="topFunction()" id="myBtn" title="Go to top"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></button>
+            @RenderBody()
+            <hr />
+        </div>
+
+    </div>
+    <!--FOOTER-->
+    <div id="footer" class="container-fluid">
+        <footer>Created by: Brad Sweet, Monica Perez, J.D. Golden, Nickolas Beorn, Rashida McWilliams, Brian Tome</footer>
+        <footer>&copy; @DateTime.Now.Year - Neighborly</footer>
+    </div>
+    <script>
+        // When the user scrolls down 50px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                document.getElementById("myBtn").style.display = "block";
+            } else {
+                document.getElementById("myBtn").style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/jquery.flip.min.js"></script>
+    @RenderSection("flipJS", required:false)
+
+    @*<script>
+        $(document).ready(function(){
+            $(".card").flip({
+                axis: 'y',
+                trigger: 'hover'
+                });
+        });
+    </script>*@
+</body>
+</html>

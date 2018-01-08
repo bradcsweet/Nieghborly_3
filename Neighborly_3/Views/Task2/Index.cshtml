@@ -1,0 +1,133 @@
+﻿@model IEnumerable<Neighborly_3.Models.Task2>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@*<h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<div class="backgroundColor">
+    <br />
+    <br />
+    <br />
+
+
+    <div class="row">
+        <div class="container taskIndex">
+            <h2>Pick A Task And Meet Your Neighbor</h2>
+            <p>
+                @Html.ActionLink("I Need Help", "Create", new { id = ViewBag.TaskId }, new { @class = "btn btn-default help", role = "button" })
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="searchFormat">
+            @using (Html.BeginForm()) //"page","Controller", formMethod invokes get method from controller
+            {
+                //names "search" match. most of the time these are strings. int.parse if you need it to be an int.
+                @Html.RadioButton("sort", "Descending", true)<span>Newest First</span>
+                @Html.RadioButton("sort", "Ascending")<span>Oldest First</span>
+                @Html.TextBox("search");
+                <input class="btn btn-default" type="submit" name="submit" value="Search" />
+            }
+        </div>
+    </div>
+    <div class="row text-center">
+        <div>
+            <h4>Click on a Task card to see description</h4>
+        </div>
+    </div>
+    <div class="row marginFormat">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-6 col-md-4">
+                <div class="card wrapper">
+                    <div class="thumbnail front taskCard">
+                        <h2>@Html.DisplayFor(modelItem => item.TaskTitle)</h2>
+                        <p>Posted : @Html.DisplayFor(modelItem => item.TimeStamp)</p>
+                        @*<p>@Html.DisplayFor(modelItem => item.TaskDescription)</p>*@
+
+                    </div>
+                    <div class="thumbnail back taskCard">
+                        <h2>
+                            @Html.DisplayFor(modelItem => item.TaskTitle)
+                        </h2>
+                        <p>
+                            @Html.DisplayFor(modelItem => item.TimeStamp)
+                        </p>
+                        <p>
+                            @Html.DisplayFor(modelItem => item.TaskDescription)
+                        </p>
+
+                        <div>
+                            <p>
+                                @if (ViewBag.userID == item.TaskCreatorID)
+                                {
+                                    @Html.DisplayNameFor(model => model.IsDone)
+                                    <a href="@Url.Action("ToggleDone", new { id = item.TaskID })" />
+                                    {
+                                        if (item.IsDone.GetValueOrDefault(false))
+                                        {
+                                            <span class="glyphicon glyphicon-check"></span>
+                                        }
+                                        else
+                                        {
+                                            <span class="glyphicon glyphicon-unchecked"></span>
+                                        }
+                                    }
+
+                                }
+                            </p>
+                            <p>
+                                @if (ViewBag.userID == item.TaskCreatorID)
+                                {
+                                    @Html.DisplayNameFor(model => model.IsAssigned)
+                                    <a href="@Url.Action("AssignedToggleDone", new { id = item.TaskID })" />
+                                    {
+                                        if (item.IsAssigned.GetValueOrDefault(false))
+                                        {
+                                            <span class="glyphicon glyphicon-check"></span>
+                                        }
+                                        else
+                                        {
+                                            <span class="glyphicon glyphicon-unchecked"></span>
+                                        }
+                                    }
+                                }
+                            </p>
+
+                            <p class="bottom">
+                                @Html.ActionLink("Details", "Details", new { id = item.TaskID }, new { @class = "btn btn-default ask", role = "button" })
+                                @Html.ActionLink("Offer Help", "Edit", new { id = item.TaskID }, new { @class = "btn btn-default help", role = "button" })
+                                @if (ViewBag.userID == item.TaskCreatorID)
+                                {
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.TaskID }, new { @class = "btn btn-default ask", @style = "display:none", role = "button" })
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.TaskID }, new { @class = "btn btn-default help", role = "button" })
+                                }
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        }
+    </div>
+</div>
+@section flipJS
+{
+    <script>
+        $(document).ready(function () {
+            $(".card").flip({
+                axis: 'y',
+                trigger: 'click'
+            });
+        });
+    </script>
+}
